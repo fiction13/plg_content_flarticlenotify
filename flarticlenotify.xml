@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ @package   plg_content_flarticlenotify
+  ~ @version   1.0.0
+  ~ @author    Dmitriy Vasyukov - https://fictionlabs.ru
+  ~ @copyright Copyright (c) 2021 Fictionlabs. All rights reserved.
+  ~ @license   GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+  ~ @link      https://fictionlabs.ru/
+  -->
+
+<extension version="3.9" type="plugin" group="content" method="upgrade" >
+	<name>PLG_CONTENT_FLARTICLENOTIFY</name>
+	<author>Dmitriy Vasyukov</author>
+	<creationDate>December 2021</creationDate>
+	<copyright>Copyright (C) FictionLabs.ru</copyright>
+	<license>https://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only</license>
+	<authorEmail>info@fictionlabs.ru</authorEmail>
+	<authorUrl>https://fictionlabs.ru</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_FLARTICLENOTIFY_DESCRIPTION</description>
+
+	<!-- Language files -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_flarticlenotify.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_flarticlenotify.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_flarticlenotify.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_content_flarticlenotify.sys.ini</language>
+	</languages>
+
+	<!-- Plugin files -->
+	<files>
+		<filename plugin="flarticlenotify">flarticlenotify.php</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<!-- Config parameter -->
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+				<field
+                        name="email"
+                        type="text"
+                        label="PLG_CONTENT_FLARTICLENOTIFY_EMAIL"
+                        description="PLG_CONTENT_FLARTICLENOTIFY_EMAIL_DESCRIPTION"
+                        required="false"
+                        default=""
+                        size="10"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="">
+                </field>
+				<field
+                        name="email_subject"
+                        type="text"
+                        label="PLG_CONTENT_FLARTICLENOTIFY_SUBJECT"
+                        description="PLG_CONTENT_FLARTICLENOTIFY_SUBJECT_DESCRIPTION"
+                        required="false"
+                        default=""
+                        size="10"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="">
+                </field>
+				<field
+                        name="email_text"
+                        type="editor"
+                        label="PLG_CONTENT_FLARTICLENOTIFY_TEXT"
+                        description="PLG_CONTENT_FLARTICLENOTIFY_TEXT_DESCRIPTION"
+                        required="false"
+                        default=""
+                        rows="3"
+                        class="input-xxlarge"
+                        readonly="false"
+                        disabled="false"
+                        filter="safehtml">
+                </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
